@@ -540,50 +540,133 @@ article .icon {
   cursor: default;
 }
 
-/* PROJECTS SECTION */
-/* PROJECTS SECTION */
 
+
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Fade-in effect */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Existing CSS */
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0; /* Ensure elements are initially hidden */
+}
+
+.fade-in.visible {
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 1; /* Override opacity when visible */
+}
+
+/* PROJECTS SECTION */
 #projects {
   position: relative;
+  padding: 2rem 0;
+}
+
+.section__text__p1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 90%;
+}
+
+.details-container {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  text-align: center;
 }
 
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
-  margin: 10px; /* Add margin between project items */
 }
 
 .project-img {
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: auto;
 }
 
 .project-title {
-  margin: 1rem;
+  margin: 1rem 0;
   color: black;
+  font-size: 1.25rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
 }
 
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
-.projects-grid {
-  display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
-  gap: 20px; /* Gap between grid items */
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Adjust to 1 column for very small screens */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -591,7 +674,7 @@ article .icon {
 /* CONTACT */
 
 #contact {
-  margin-top: 470px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
   flex-direction: column;
