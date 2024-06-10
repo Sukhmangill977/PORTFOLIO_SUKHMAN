@@ -7,6 +7,9 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <!-- Include Typed.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+
   </head>
   <body>
     <nav id="desktop-nav">
@@ -43,7 +46,7 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Sukhman Gill</h1>
-        <p class="section__text__p2">Frontend Developer</p>
+        <p class="section__text__p2 typed-container"><span class="typed-text"></span></p> <!-- Add class for typed effect -->
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -279,114 +282,52 @@
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
-        <div class="about-containers">
+        <div class="projects-grid">
           <div class="details-container color-container">
             <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
+              <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
             </div>
             <h2 class="experience-sub-title project-title">COLLEGE CONNECT</h2>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Sukhmangill977/Academics'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://edconnect-dashboard-blond.vercel.app'"
-              >
-                Live Demo
-              </button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Sukhmangill977/Academics'">Github</button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://edconnect-dashboard-blond.vercel.app'">Live Demo</button>
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
+              <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
             </div>
             <h2 class="experience-sub-title project-title">HOSPITAL MANAGEMENT SYSTEM</h2>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Sukhmangill977/hospital'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://hospital-liart-ten.vercel.app'"
-              >
-                Live Demo
-              </button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Sukhmangill977/hospital'">Github</button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://hospital-liart-ten.vercel.app'">Live Demo</button>
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
+              <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
             </div>
-            
             <h2 class="experience-sub-title project-title">SPEECH-TO-TEXT APP</h2>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Sukhmangill977/speech_to_text'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://speech-to-textbys.vercel.app'"
-              >
-                Live Demo
-              </button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Sukhmangill977/speech_to_text'">Github</button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://speech-to-textbys.vercel.app'">Live Demo</button>
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
-              <img
-                src="./assets/project-4.png"
-                alt="Project 3"
-                class="project-img"
-              />
+              <img src="./assets/project-4.png" alt="Project 4" class="project-img" />
             </div>
             <h2 class="experience-sub-title project-title">ONLINE MEETING APP</h2>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Sukhmangill977/video_meeting_app'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://edconnect-meeting.vercel.app/'"
-              >
-                Live Demo
-              </button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Sukhmangill977/video_meeting_app'">Github</button>
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://edconnect-meeting.vercel.app/'">Live Demo</button>
             </div>
-          
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
     </section>
+    
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
@@ -423,5 +364,15 @@
       <p>Copyright &#169; 2023 John Doe. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var typed = new Typed('.typed-text', {
+            strings: ["Frontend Developer", "UX Designer", "Web Developer"],
+              typeSpeed: 50,
+              backSpeed: 50,
+              loop: true
+          });
+      });
+  </script>
   </body>
 </html>
