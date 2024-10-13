@@ -27,7 +27,6 @@ a,
 }
 
 /* DESKTOP NAV */
-
 nav,
 .nav-links {
   display: flex;
@@ -60,10 +59,45 @@ a:hover {
 
 .logo {
   font-size: 2rem;
+  transition: color 0.5s ease;
 }
 
 .logo:hover {
   cursor: default;
+}
+
+/* Dropdown animation */
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply dropdown animation to each nav item */
+.nav-links li {
+  opacity: 0;
+  animation: dropdown 0.5s ease forwards;
+}
+
+.nav-links li:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.nav-links li:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.nav-links li:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.nav-links li:nth-child(4) {
+  animation-delay: 2s;
 }
 
 /* HAMBURGER MENU */
@@ -175,6 +209,50 @@ section {
   width: 400px;
   margin: auto 0;
   
+}
+/* Drift-in animations */
+@keyframes drift-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes drift-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+.drift-left {
+  animation: drift-left 1.5s ease-out;
+}
+
+.drift-right {
+  animation: drift-right 1.5s ease-out;
+}
+
+.section__text {
+  max-width: 600px;
+  text-align: right;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+#socials-container {
+  margin-top: 20px;
 }
 /* GENERAL */
 
@@ -472,6 +550,11 @@ section {
 
 .about-pic {
   border-radius: 2rem;
+  transition: transform 0.5s; /* Add transition for scale effect */
+}
+
+.scale-effect:hover {
+  transform: scale(1.05); /* Scale effect on hover */
 }
 
 .arrow {
@@ -490,6 +573,38 @@ section {
   text-align: center;
 }
 
+/* Move-in animations */
+@keyframes move-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+.move-in-left {
+  animation: move-in-left 1.5s ease-out;
+}
+
+.move-in-right {
+  animation: move-in-right 1.5s ease-out;
+}
+
 .section-container {
   gap: 4rem;
   height: 80%;
@@ -500,6 +615,18 @@ section {
   width: 400px;
   margin: auto 0;
 }
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
 
 /* EXPERIENCE SECTION */
 
@@ -712,6 +839,48 @@ article .icon {
   height: 2.5rem;
 }
 
+/* CONTACT */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  background: (250, 250, 250);
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-icon {
+  cursor: default;
+}
+
+.email-icon {
+  height: 2.5rem;
+}
+
+
+
 /* FOOTER SECTION */
 
 footer {
@@ -719,9 +888,7 @@ footer {
   margin: 0 1rem;
 }
 
-footer p {
-  text-align: center;
-}
+
 
 
 .section__text {
@@ -752,6 +919,16 @@ footer p {
   justify-content: center;
   margin-top: 1rem;
   gap: 1rem;
+}
+/* FOOTER SECTION */
+
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+}
+
+footer p {
+  text-align: center;
 }
 
 /* ICONS */
@@ -929,53 +1106,3 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
-/* CONTACT */
-
-#contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 80vh;
-}
-
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
-}
-
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-.contact-info-container p {
-  font-size: larger;
-}
-
-.contact-icon {
-  cursor: default;
-}
-
-.email-icon {
-  height: 2.5rem;
-}
-
-/* FOOTER SECTION */
-
-footer {
-  height: 26vh;
-  margin: 0 1rem;
-}
-
-footer p {
-  text-align: center;
-}
