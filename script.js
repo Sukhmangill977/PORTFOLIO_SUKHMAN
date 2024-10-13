@@ -60,3 +60,15 @@ setInterval(changeLogoColor, 2000); // Change color every 5 seconds
 
   // Listen for scroll events
   window.addEventListener('scroll', showHandshakeAndContact);
+  
+
+  // Wait for the DOM to fully load
+window.addEventListener('DOMContentLoaded', () => {
+  // After a brief delay (for the zoom effect), remove the logo container
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+    // Change the logo size to smaller for the navbar
+    const logoNav = document.getElementById('logo-nav');
+    logoNav.style.fontSize = '2rem'; // Adjust the font size in the navbar
+  }, 2000); // Adjust this timing based on your animation duration
+});

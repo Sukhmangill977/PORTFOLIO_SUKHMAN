@@ -99,6 +99,59 @@ a:hover {
 .nav-links li:nth-child(4) {
   animation-delay: 2s;
 }
+/* Logo Container Styles */
+#logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  background-color: white; /* White background */
+  position: relative;
+  z-index: 999; /* Ensure it appears on top of other content */
+}
+
+.logo {
+  font-size: 5rem; /* Large font size for the logo */
+  color: black; /* Initial logo color */
+  opacity: 0; /* Start invisible for the animation */
+  transform: scale(1.5); /* Start scaled up */
+  animation: zoomIn 2s forwards, colorChange 2s infinite; /* Animation */
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0; /* Start invisible */
+    transform: scale(1.5); /* Start scaled up */
+  }
+  50% {
+    opacity: 1; /* Fade in */
+    transform: scale(1); /* Scale down to original size */
+  }
+  100% {
+    opacity: 1; /* Remain visible */
+    transform: scale(1); /* End at original size */
+  }
+}
+
+@keyframes colorChange {
+  0% { color: #ff5733; } /* Starting color */
+  25% { color: #33c9ff; } /* First color change */
+  50% { color: #a833ff; } /* Second color change */
+  75% { color: #ff33a6; } /* Third color change */
+  100% { color: #ff5733; } /* Loop back to starting color */
+}
+
+/* Transition to the rest of the page after the animation */
+body.loaded #logo-container {
+  display: none; /* Hide the logo container after the animation */
+}
+
+/* Adjust the size of the logo in the navbar */
+#desktop-nav .logo {
+  font-size: 2rem; /* Reduced size for the navbar */
+  transition: font-size 0.5s ease; /* Smooth transition for size change */
+}
+
 
 /* HAMBURGER MENU */
 
@@ -894,7 +947,6 @@ article {
 #certificates-communication {
   padding: 4rem 1rem;
   background-color: #f9f9f9;
-  max-height: 200px;
 }
 
 .container {
@@ -907,7 +959,7 @@ article {
 
 /* Left Side - Certificates */
 .certificates-box {
-  flex: 1;
+  flex: 1 1 300px; /* Allow flexibility and set minimum width */
   background-color: #fff;
   padding: 2rem;
   border-radius: 1rem;
@@ -946,7 +998,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  flex: 1;
+  flex: 1 1 300px; /* Allow flexibility and set minimum width */
 }
 
 .communication-box,
@@ -955,7 +1007,6 @@ article {
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  max-height: 160px;
 }
 
 .communication-box h2,
@@ -976,12 +1027,18 @@ article {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    gap: 1.5rem; /* Adjust gap for smaller screens */
   }
 
   .right-boxes {
     flex-direction: column;
   }
+
+  .certificates-box, .communication-box, .languages-box {
+    width: 100%; /* Full width for smaller screens */
+  }
 }
+
 #fireworks {
   position: fixed;
   top: 0;
@@ -995,5 +1052,3 @@ article {
 .container {
   position: relative;
 }
-
-/* Certificates, Communication, and Languages styling remains the same */
