@@ -263,8 +263,8 @@ section {
   height: 90%;
   width: 90%;
   border-radius: 50%; /* Make it circular */
-  background: linear-gradient(45deg, rgba(255, 222, 34, 0.8), rgba(255, 223, 0, 0.8)); /* Golden gradient */
-  box-shadow: 0 0 20px rgba(230, 209, 91, 0.8); /* Glowing effect */
+  background: linear-gradient(45deg, rgba(218, 218, 218, 0.8), rgba(206, 206, 206, 0.8)); /* Golden gradient */
+  box-shadow: 0 0 20px rgba(210, 210, 210, 0.8); /* Glowing effect */
   display: flex;
   justify-content: center;
   align-items: center;
