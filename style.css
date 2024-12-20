@@ -1017,7 +1017,26 @@ article {
 }
 
 .communication-box p,
-.languages-box p {
+.languages-box h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.publication-box  {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.publication-box h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.publication-box p {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: #555;
